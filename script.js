@@ -27,8 +27,23 @@
         if(pos1Val != "" && pos2Val != "" && pos3Val != ""){
             if(pos1Val == pos2Val && pos2Val == pos3Val){
                 alert(`Congratulation Winner is ${pos1Val}`)
+                disableBoxes();
             }
         }
         
     }
+ }
+
+ const disableBoxes = () =>{
+    for(box of boxes){
+        box.disabled = true;
+    }
+ }
+
+ const reset = () =>{
+    turnO = true;
+    boxes.forEach((box) =>{
+        box.innerHTML = "";
+        box.disabled = false;
+    })
  }
